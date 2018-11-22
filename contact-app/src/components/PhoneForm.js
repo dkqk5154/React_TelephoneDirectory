@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class PhoneFrom extends Component {
+class PhoneForm extends Component {
     input = React.createRef()
     state = {
         name : '',
@@ -39,6 +39,7 @@ class PhoneFrom extends Component {
                 <button type="submit">등록</button>
                 <div>
                     {this.state.name}
+                    /
                     {this.state.phone}
                 </div>
                
@@ -47,4 +48,4 @@ class PhoneFrom extends Component {
     }
 }
 
-export default PhoneFrom;
+export default PhoneForm;

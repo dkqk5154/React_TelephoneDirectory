@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import PhoneFrom from './components/PhoneFrom';
-import PhoneinfoList from './components/PhoneinfoList';
+import PhoneForm from './components/PhoneForm'
+import PhoneInfoList from './components/PhoneInfoList';
 
 
 class App extends Component {
@@ -17,7 +17,7 @@ class App extends Component {
       },
       {
         id:1,
-        name: '람머스',
+        name: '람머스', 
         phone: '010-0000-0002' 
       },
       {
@@ -71,13 +71,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <PhoneFrom onCreate={this.handleCreate}/>
+        <PhoneForm onCreate={this.handleCreate}/>
         <input
           value={this.state.keyword}
           onChange={this.handleChange}
           placeholder="검색..."
         />
-        <PhoneinfoList 
+        <PhoneInfoList 
           data={this.state.information.filter(
             info => info.name.indexOf(this.state.keyword) > -1
           )}

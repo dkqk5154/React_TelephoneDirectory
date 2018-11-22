@@ -1,6 +1,6 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
 
-class Phonelnfo extends Component {
+class PhoneInfo extends Component {
 
     state = {
         editing: false,
@@ -51,7 +51,7 @@ class Phonelnfo extends Component {
     }
 
     render() {
-        const {name, phone, id} = this.props.info;
+        const {name, phone} = this.props.info;
         const {editing} = this.state;
         const style ={
             border: '1px solid black',
@@ -64,25 +64,27 @@ class Phonelnfo extends Component {
             <div style={style}>
                 {
                     editing ? (
-                        <>
+                        <Fragment>
                            <div>
-                               <input 
+                               <input
+                                    name="name" 
                                     onChange={this.handleChange}
                                     value={this.state.name}
                                 />
                            </div>
                            <div>
                                <input 
+                                    name="phone" 
                                     onChange={this.handleChange}
                                     value={this.state.phone}
                                />
                            </div>
-                        </>
+                        </Fragment>
                     ): (
-                        <>
+                        <Fragment>
                             <div><b>{name}</b></div>
                             <div>{phone}</div>
-                        </>
+                        </Fragment>
                     )
                 }
                 <button onClick={this.handleRemove}>삭제</button>
@@ -94,4 +96,4 @@ class Phonelnfo extends Component {
     }
 }
 
-export default Phonelnfo;
+export default PhoneInfo;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import Phonelnfo from './Phonelnfo';
+import PhoneInfo from './PhoneInfo';
 
-class PhoneinfoList extends Component {
+class PhoneInfoList extends Component {
     static defaultProps = {
         data: []
     }
@@ -11,7 +11,7 @@ class PhoneinfoList extends Component {
         console.log('rendering list')
         const list = data.map(
             info => (
-            <Phonelnfo 
+            <PhoneInfo 
                 onRemove={onRemove }
                 onUpdate={onUpdate}
                 info={info} 
@@ -26,4 +26,4 @@ class PhoneinfoList extends Component {
     }
 }
 
-export default PhoneinfoList;
+export default PhoneInfoList;
